@@ -1,7 +1,7 @@
 // src/components/AboutSection.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import aboutImg from "../assets/images/services/inte.jpg";
+import aboutImg from "../assets/images/usmania/u14.jpg";
 
 const OurStory = () => {
   return (
