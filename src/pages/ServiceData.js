@@ -1,5 +1,12 @@
 // src/data/servicesData.js
-import pvcWall from "../assets/images/gallery/g6.avif"; // ✅ replace with real images
+import pvcWall from "../assets/images/usmania/h2.jpg";
+import ceiling from "../assets/images/usmania/u19.jpg";
+import charcoal from "../assets/images/usmania/u13.jpg";
+import wps from "../assets/images/usmania/u11.jpg";
+import fluted from "../assets/images/usmania/u18.jpg";
+import pvcDoor from "../assets/images/usmania/door.jpg";
+import uvMarble from "../assets/images/usmania/u8.jpg";
+import wallpaper from "../assets/images/usmania/u2.jpg";
 
 const ServiceData = {
   topHeading: "Our Premium Interior Solutions",
@@ -22,7 +29,7 @@ const ServiceData = {
     {
       title: "Ceiling Panel",
       slug: "ceiling-panel",
-      image: pvcWall,
+      image: ceiling,
       heading: "Ceiling Panels – A Touch of Grandeur",
       description: `
         Transform ordinary ceilings into breathtaking designs with our premium ceiling panels. They offer insulation, acoustic control, and visually stunning patterns that define luxury interiors. From minimalist modern to classic opulence, each panel enhances ambiance and sets the tone for your space.
@@ -33,7 +40,7 @@ const ServiceData = {
     {
       title: "Charcoal Panel",
       slug: "charcoal-panel",
-      image: pvcWall,
+      image: charcoal,
       heading: "Charcoal Panels – Luxury in Every Line",
       description: `
         Charcoal panels bring bold character and sophisticated texture to your interiors. With a premium matte finish and high-end appeal, they are perfect for accent walls, living rooms, and commercial spaces seeking elegance with impact. 
@@ -44,7 +51,7 @@ const ServiceData = {
     {
       title: "WPS Louvers",
       slug: "wps-louvers",
-      image: pvcWall,
+      image: wps,
       heading: "WPS Louvers – Redefining Modern Architecture",
       description: `
         WPS Louvers represent contemporary design at its finest. Lightweight, stylish, and versatile, they add depth, airflow, and aesthetic appeal to any wall or ceiling. Ideal for homes, offices, or commercial interiors, these louvers balance function with elegance. 
@@ -55,7 +62,7 @@ const ServiceData = {
     {
       title: "Fluted Panel",
       slug: "fluted-panel",
-      image: pvcWall,
+      image: fluted,
       heading: "Fluted Panels – Timeless Elegance",
       description: `
         Fluted panels are the epitome of elegance, offering vertical grooves that add rhythm, texture, and depth to interiors. Perfect for feature walls, headboards, and office receptions, these panels reflect subtle sophistication and timeless style. 
@@ -66,7 +73,7 @@ const ServiceData = {
     {
       title: "PVC Door",
       slug: "pvc-door",
-      image: pvcWall,
+      image: pvcDoor,
       heading: "PVC Doors – Strong, Stylish, Sustainable",
       description: `
         Our PVC doors are designed for elegance, strength, and long-lasting performance. Lightweight, durable, and resistant to wear and environmental factors, they are suitable for homes, offices, and premium commercial spaces. Available in multiple finishes, they enhance every interior with modern sophistication. 
@@ -77,7 +84,7 @@ const ServiceData = {
     {
       title: "UV Marble Sheet",
       slug: "uv-marble-sheet",
-      image: pvcWall,
+      image: uvMarble,
       heading: "UV Marble Sheets – Luxury Redefined",
       description: `
         Experience the grandeur of marble without the weight and cost. Our UV marble sheets are high-gloss, scratch-resistant, and available in exquisite patterns, offering a royal touch to walls and surfaces. Easy to install, durable, and elegant, they transform interiors into luxurious environments. 
@@ -88,7 +95,7 @@ const ServiceData = {
     {
       title: "Wallpaper",
       slug: "wallpaper",
-      image: pvcWall,
+      image: wallpaper,
       heading: "Wallpaper – Design Beyond Imagination",
       description: `
         Wallpapers are more than coverings; they are canvases for expression. From modern minimalistic textures to luxurious golden motifs, our collection turns walls into works of art, creating spaces that inspire and impress. 
