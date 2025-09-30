@@ -1,6 +1,6 @@
 // src/components/ModernNavbar.jsx
 import React, { useState, useRef, useEffect } from "react";
-// import logo from "../assets/sfpm.png";
+import logo from "../assets/ulogo.png";
 import {
   FaBars,
   FaTimes,
@@ -132,7 +132,7 @@ const ModernNavbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              src={""}
+              src={logo}
               alt="Usmani Decor Logo"
               className="h-10 md:h-16 object-contain drop-shadow-lg"
             />

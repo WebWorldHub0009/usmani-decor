@@ -1,19 +1,32 @@
 // src/components/Hero.jsx
-import React, { useState, useEffect } from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaCogs, FaShieldAlt, FaBuilding, FaArrowUp } from "react-icons/fa";
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaCogs,
+  FaShieldAlt,
+  FaBuilding,
+  FaArrowUp,
+} from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { Link } from "react-router-dom";
+
+// Lazy load Swiper for mobile feature cards
+const Swiper = lazy(() => import("swiper/react").then((module) => ({ default: module.Swiper })));
+const SwiperSlide = lazy(() => import("swiper/react").then((module) => ({ default: module.SwiperSlide })));
+
 import "swiper/css";
 import "swiper/css/pagination";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import heroImg1 from "../assets/images/usmania/h1.jpg";
 import heroImg2 from "../assets/images/usmania/h2.jpg";
 import heroImg3 from "../assets/images/usmania/h3.jpg";
 import heroImg4 from "../assets/images/usmania/u6.jpg";
-import { Link } from "react-router-dom";
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -48,7 +61,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen font-sans bg-gray-50 overflow-hidden">
+    <section className="relative w-full min-h-screen font-sans overflow-hidden">
       {/* Background Slideshow */}
       <div className="absolute inset-0">
         {images.map((img, index) => (
@@ -56,6 +69,7 @@ export default function Hero() {
             key={index}
             src={img}
             alt="Usmani Decor"
+            
             className={`absolute inset-0 w-full h-full object-cover transform transition-all duration-[2000ms] ease-in-out ${
               index === currentIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
             }`}
@@ -64,7 +78,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
       </div>
 
-      {/* Social Media */}
+      {/* Social Media Icons */}
       <div className="absolute left-6 top-1/2 -translate-y-1/2 flex-col gap-5 text-white z-50 hidden md:flex">
         <FaFacebookF className="hover:text-[#D4AF37] transition text-2xl cursor-pointer" />
         <FaTwitter className="hover:text-[#1A609F] transition text-2xl cursor-pointer" />
@@ -140,22 +154,27 @@ export default function Hero() {
 
       {/* Feature Cards Mobile */}
       <div className="mt-2 md:hidden w-full px-6 z-20">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          spaceBetween={15}
-          slidesPerView={1.15}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000 }}
-        >
-          {cards.map((card, i) => (
-            <SwiperSlide key={i}>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#D4AF37] text-white p-6 rounded-2xl w-full hover:scale-105 hover:shadow-2xl transition">
-                <div className="flex items-center gap-3 mb-3">{card.icon}<h3 className="font-bold uppercase tracking-wide">{card.title}</h3></div>
-                <p className="text-gray-200 text-sm">{card.desc}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <Suspense fallback={<p className="text-center text-gray-400">Loading features...</p>}>
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={15}
+            slidesPerView={1.15}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000 }}
+          >
+            {cards.map((card, i) => (
+              <SwiperSlide key={i}>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#D4AF37] text-white p-6 rounded-2xl w-full hover:scale-105 hover:shadow-2xl transition">
+                  <div className="flex items-center gap-3 mb-3">
+                    {card.icon}
+                    <h3 className="font-bold uppercase tracking-wide">{card.title}</h3>
+                  </div>
+                  <p className="text-gray-200 text-sm">{card.desc}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Suspense>
       </div>
 
       {/* Bottom Info Bar */}
