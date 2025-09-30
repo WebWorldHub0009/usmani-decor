@@ -35,7 +35,7 @@ const navItems = [
 // Company info
 const COMPANY_INFO = {
   udyam: "UDYAM-UP-02-0009174",
-  mobile: "+91 9027958538",
+  mobile1: "+91 9027958538", 
   mobile: "+91 7017479896",
   email: "Usmanidecoraligarh@gmail.com",
 };
@@ -92,7 +92,7 @@ const ModernNavbar = () => {
                  <p className="flex items-center gap-1">
                 <FaPhoneAlt className="text-[#D4AF37]" />
                 <span className="font-semibold text-[#D4AF37]">Mobile:</span>{" "}
-                {COMPANY_INFO.mobile}
+                {COMPANY_INFO.mobile1}
               </p>
               <p className="flex items-center gap-1">
                 <FaFileInvoice className="text-[#D4AF37]" />
@@ -134,7 +134,7 @@ const ModernNavbar = () => {
             <img
               src={logo}
               alt="Usmani Decor Logo"
-              className="h-10 md:h-16 object-contain drop-shadow-lg"
+              className="h-14 md:h-16 object-contain drop-shadow-lg"
             />
             
           </Link>
@@ -199,7 +199,7 @@ const ModernNavbar = () => {
                 className="w-64 h-full bg-white shadow-lg px-6 py-4 flex flex-col font-body"
               >
                 <div className="flex justify-between items-center mb-3">
-                  <img src={logo} alt="Usmani Decor" className="h-7" />
+                  <img src={logo} alt="Usmani Decor" className="h-12" />
                   <FaTimes
                     className="text-xl text-[#003B73] cursor-pointer"
                     onClick={toggleMenu}
@@ -228,13 +228,18 @@ const ModernNavbar = () => {
                 <div className="mt-auto pt-4 border-t border-[#6E6E6E] text-xs">
                   <p className="flex items-center gap-1 py-1">
                     <FaFileInvoice />{" "}
-                    <strong className="text-[#D4AF37]">GSTIN:</strong>{" "}
-                    {COMPANY_INFO.gst}
+                    <strong className="text-[#D4AF37]">UDYAM:</strong>{" "}
+                    {COMPANY_INFO.udyam}
                   </p>
                   <p className="flex gap-1">
                     <FaPhoneAlt />{" "}
                     <span className="font-semibold text-[#D4AF37]">Mobile:</span>{" "}
                     {COMPANY_INFO.mobile}
+                  </p>
+                    <p className="flex gap-1">
+                    <FaPhoneAlt />{" "}
+                    <span className="font-semibold text-[#D4AF37]">Mobile:</span>{" "}
+                    {COMPANY_INFO.mobile1}
                   </p>
                   <div className="flex gap-3 mt-3 text-lg text-[#003B73]">
                     {Object.entries(socialLinks).map(([k, url]) => (

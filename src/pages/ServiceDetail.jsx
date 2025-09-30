@@ -2,7 +2,8 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import ServiceData from "./ServiceData";
-import ServicesSection from "../components/ServiceSection";
+
+import ServicesList from "../components/ServiceList";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -95,7 +96,8 @@ export default function ServiceDetail() {
         </div>
       </div>
     </section>
-    <ServicesSection/>
+    
+    <ServicesList/>
     </>
   );
 }

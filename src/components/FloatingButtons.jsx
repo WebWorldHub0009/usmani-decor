@@ -19,7 +19,7 @@ const FloatingButtons = () => {
             {/* Call Button */}
             <motion.a
               key="call"
-              href="tel:+919627200705"
+              href="tel:+917017479896"
               title="Call Us"
               initial={{ opacity: 0, y: 20, scale: 0 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -36,7 +36,7 @@ const FloatingButtons = () => {
             {/* WhatsApp Button */}
             <motion.a
               key="whatsapp"
-              href="https://wa.me/+919627200705"
+              href="https://wa.me/+919027958538"
               target="_blank"
               rel="noopener noreferrer"
               title="Chat on WhatsApp"

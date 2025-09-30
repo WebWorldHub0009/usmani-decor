@@ -2,6 +2,8 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ModernNavbar from "./components/ModernNavbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/FloatingButtons"
+import FloatingButtons from "./components/FloatingButtons";
 
 // Lazy load pages
 const Home = lazy(() => import("./pages/Home"));
@@ -22,6 +24,7 @@ const Loader = () => (
 const App = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <ModernNavbar />
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -34,6 +37,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
+      <FloatingButtons/>
       <Footer />
     </BrowserRouter>
   );

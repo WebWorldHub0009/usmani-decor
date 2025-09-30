@@ -156,8 +156,8 @@ export default function Footer() {
             <a href="tel:+919027958538">+91 9027958538</a>
           </p>
 
-          <div className="mb-4 flex justify-center items-center relative right-0">
-            <div>
+          <div className="mb-4 flex justify-center items-center ">
+            <div className="relative right-10 md:right-0">
             <Translator />
             </div>
           </div>

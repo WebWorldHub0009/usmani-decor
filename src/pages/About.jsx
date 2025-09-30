@@ -4,6 +4,7 @@ import Testimonials from "../components/Testimonials"
 import FAQ from '../components/Faq'
 import VisionMissionGoal from '../components/VisionMissionGoal'
 import OurStory from '../components/OurStory'
+import OurTeam from '../components/OurTeam'
 
 const About = () => {
   return (
@@ -13,6 +14,7 @@ const About = () => {
  <VisionMissionGoal/>
  <Testimonials/>
  <FAQ/>
+ <OurTeam/>
  </>
   )
 }
